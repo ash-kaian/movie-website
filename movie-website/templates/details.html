@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <title>Movie Website</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="http://127.0.0.1:5000" class="header-container">
+                <i class="bx bxl-python header-logo-icon"></i>
+                <p class="header-logo-icon-text">Movie Website</p>
+            </a>
+        </header>
+        <main class="main">
+            <div class="main-container">
+                <div class="main-movie-info-container">
+                    <div class="main-movie-info-image-container">
+                        <img
+                            src="{{ movie_details[0] }}"
+                            alt=""
+                            class="main-movie-info-bg-image"
+                        />
+                        <div class="main-movie-info-image-info-container">
+                            <img
+                                src="{{ movie_details[1] }}"
+                                alt=""
+                                class="main-movie-info-image-info"
+                            />
+                            <div
+                                class="main-movie-info-name-genre-info-container"
+                            >
+                                <p class="main-movie-info-name-info">
+                                    {{ movie_details[2] }}
+                                </p>
+                                <p class="main-movie-info-genre-info">
+                                    {% for index in range(10) %} {{
+                                    movie_details[3][index] }} {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-movie-info-rating-trailer-container">
+                        <div class="main-movie-info-rating-trailer-line"></div>
+                        <div class="main-movie-info-rating-container">
+                            <p class="main-movie-info-rating">
+                                {{ movie_details[4] }} User Score
+                            </p>
+                        </div>
+                        <a href="" class="main-movie-info-trailer"
+                            >Play Trailer</a
+                        >
+                    </div>
+                </div>
+                <div class="main-movie-overview-container">
+                    <p class="main-movie-overview-title">Overview</p>
+                    <p class="main-movie-overview-text">
+                        {{ movie_details[5] }}
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <title>Movie Website</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="http://127.0.0.1:5000" class="header-container">
+                <i class="bx bxl-python header-logo-icon"></i>
+                <p class="header-logo-icon-text">Movie Website</p>
+            </a>
+        </header>
+        <div class="main">
+            <div class="main-container">
+                <div class="main-movie-big-container">
+                    <div class="main-movie-list-container">
+                        <div class="main-movie-list-title-container">
+                            <p class="main-movie-list-title">Popular</p>
+                        </div>
+                        <div class="main-movie-list-item-container">
+                            {% for index in range(15) %}
+                            <div class="main-movie-item-container">
+                                <form
+                                    action="#"
+                                    method="post"
+                                    class="main-movie-item-poster-container"
+                                >
+                                    <input
+                                        type="text"
+                                        name="id"
+                                        value="{{ popular[index][3] }}"
+                                        class="main-movie-item-id"
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="main-movie-item-img-container"
+                                    >
+                                        <img
+                                            src="{{ popular[index][0] }}"
+                                            alt=""
+                                            class="main-movie-item-img"
+                                        />
+                                    </button>
+                                </form>
+                                <p class="main-movie-item-title">
+                                    {{ popular[index][1] }}
+                                </p>
+                                <p class="main-movie-item-release-date">
+                                    {{ popular[index][2] }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="main-movie-list-container">
+                        <div class="main-movie-list-title-container">
+                            <p class="main-movie-list-title">Top Rated</p>
+                        </div>
+                        <div class="main-movie-list-item-container">
+                            {% for index in range(15) %}
+                            <div class="main-movie-item-container">
+                                <form
+                                    action="#"
+                                    method="post"
+                                    class="main-movie-item-poster-container"
+                                >
+                                    <input
+                                        type="text"
+                                        name="id"
+                                        value="{{ top_rated[index][3] }}"
+                                        class="main-movie-item-id"
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="main-movie-item-img-container"
+                                    >
+                                        <img
+                                            src="{{ top_rated[index][0] }}"
+                                            alt=""
+                                            class="main-movie-item-img"
+                                        />
+                                    </button>
+                                </form>
+                                <p class="main-movie-item-title">
+                                    {{ top_rated[index][1] }}
+                                </p>
+                                <p class="main-movie-item-release-date">
+                                    {{ top_rated[index][2] }}
+                                </p>
+                                <p class="main-movie-item-id">
+                                    {{ top_rated[index][3] }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

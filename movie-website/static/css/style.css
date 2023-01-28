@@ -1,0 +1,345 @@
+/* ======================== Google Font ======================== */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
+
+/* ======================== Variable ======================== */
+:root {
+    --ff-body: "Sora", sans-serif;
+
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    --clr-main: #1da1f1;
+    --clr-background: #0f0f0f;
+    --clr-title: #ffffff;
+    --clr-text: #acacac;
+}
+
+/* ======================== Reset HTML ======================== */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color: var(--clr-background);
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--ff-body);
+    font-size: 0.95rem;
+    color: var(--clr-text);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* ======================== Index Header ======================== */
+.header-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+}
+
+.header-logo-icon {
+    font-size: 1.5rem;
+    color: #3470a2;
+}
+
+.header-logo-icon-text {
+    color: var(--clr-title);
+    font-size: 1.15rem;
+    font-weight: var(--fw-bold);
+}
+
+/* ======================== Index Main ======================== */
+.main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.main-movie-list-title-container {
+    padding: 0 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-movie-list-title {
+    padding-left: 1rem;
+    font-size: 1.05rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-title);
+    position: relative;
+}
+
+.main-movie-list-title::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: var(--clr-main);
+    height: 100%;
+    width: 3px;
+}
+
+.main-movie-list-item-container {
+    display: flex;
+    overflow: auto;
+}
+
+.main-movie-item-container {
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-movie-item-container:last-child {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.main-movie-item-poster-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-movie-item-id {
+    display: none;
+}
+
+.main-movie-item-img-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.main-movie-item-img {
+    width: 180px;
+    border-radius: 0.5rem;
+}
+
+.main-movie-item-title {
+    width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: var(--fw-bold);
+    color: var(--clr-title);
+    margin-bottom: 0.5rem;
+}
+
+.main-movie-item-release-date {
+    width: 180px;
+    font-size: 0.75rem;
+}
+
+/* ======================== Details Main ======================== */
+.main-movie-info-image-container {
+    position: relative;
+}
+
+.main-movie-info-bg-image {
+    max-width: 1280px;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+.main-movie-info-image-info-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    transform: translate(5%, 15%);
+    display: flex;
+    gap: 1rem;
+}
+
+.main-movie-info-image-info {
+    border-radius: 0.5rem;
+    width: 110px;
+    box-shadow: 0 0 25px 5px rgb(0, 0, 0, 0.75);
+    display: flex;
+}
+
+.main-movie-info-name-genre-info-container {
+    margin: auto 0;
+}
+
+.main-movie-info-name-info {
+    font-weight: var(--fw-bold);
+    color: var(--clr-title);
+    margin-bottom: 1rem;
+}
+
+.main-movie-info-genre-info {
+    color: var(--clr-title);
+    font-size: 0.75rem;
+}
+
+.main-movie-info-rating-trailer-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.main-movie-info-rating-trailer-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-text);
+    height: 75%;
+    width: 1px;
+}
+
+.main-movie-info-rating {
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-title);
+    margin-left: 1.5rem;
+}
+
+.main-movie-info-trailer {
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-title);
+    margin-right: 2.5rem;
+}
+
+.main-movie-overview-container {
+    padding: 1rem 1.5rem;
+}
+
+.main-movie-overview-title {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-title);
+    margin-bottom: 0.5rem;
+}
+
+/* ======================== Responsive ======================== */
+@media screen and (min-width: 767px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    .header-container {
+        padding: 2rem;
+    }
+
+    .header-logo-icon {
+        font-size: 2.25rem;
+    }
+
+    .header-logo-icon-text {
+        font-size: 1.65rem;
+    }
+
+    .main-movie-list-title-container {
+        padding: 0 2.5rem;
+    }
+
+    .main-movie-list-title {
+        font-size: 1.2rem;
+    }
+
+    .main-movie-list-item-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-movie-item-container {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+    }
+
+    .main-movie-info-image-info-container {
+        transform: translate(6%, 18.5%);
+    }
+
+    .main-movie-info-image-info {
+        width: 210px;
+    }
+
+    .main-movie-info-name-info {
+        font-size: 2rem;
+    }
+
+    .main-movie-info-genre-info {
+        font-size: 1.15rem;
+    }
+
+    .main-movie-info-rating-trailer-container {
+        padding: 2rem;
+    }
+
+    .main-movie-info-rating {
+        margin-left: 4.75rem;
+        font-size: 1.25rem;
+    }
+
+    .main-movie-info-trailer {
+        margin-right: 6.75rem;
+        font-size: 1.25rem;
+    }
+
+    .main-movie-overview-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .main-movie-list-item-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .main-movie-info-image-info-container {
+        transform: translate(5.75%, 41%);
+    }
+
+    .main-movie-overview-container {
+        padding-bottom: 3rem;
+    }
+
+    .main-movie-overview-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1279px) {
+    .main-movie-list-item-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .main-movie-info-image-info-container {
+        transform: translate(5.75%, 62.5%);
+    }
+}
+
+@media screen and (min-width: 1439px) {
+    .main-movie-list-title-container {
+        padding: 0 1.25rem;
+    }
+
+    .main-movie-list-item-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
