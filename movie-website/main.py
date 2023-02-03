@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
 from data import movie_data, movie_details_data
-import jyserver.Flask as jsf
 
 app = Flask(__name__)
 
