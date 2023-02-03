@@ -1,5 +1,4 @@
 from fetch import fetch_data, fetch_details_data
-import numpy
 
 
 def movie_data(clas, category):
